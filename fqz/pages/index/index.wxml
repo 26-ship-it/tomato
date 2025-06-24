@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="timer-container">
+    <view class="timer-circle" style="background: conic-gradient({{currentThemeColor}} 0% {{progressPercent}}%, #f5f5f7 {{progressPercent}}% 100%);">
+      <view class="timer-display">{{timerDisplay}}</view>
+    </view>
+    <view class="timer-label" style="color: {{currentThemeColor}}">{{currentMode}}时间</view>
+  </view>
+  
+  <view class="timer-controls">
+    <view class="control-btn grey-icon" bindtap="resetTimer" animation="{{resetAnimation}}">
+      <image src="/循环.png" class="control-icon-img"/>
+    </view>
+    <view class="control-btn primary" bindtap="toggleTimer" style="background-color: {{currentThemeColor}}">
+      <image src="/方框.png" class="control-icon-img primary-icon"/>
+    </view>
+    <view class="control-btn" bindtap="skipTimer">
+      <image src="/切换.png" class="control-icon-img"/>
+    </view>
+  </view>
+  
+  <view class="mode-selector">
+    <view class="mode-btn {{currentMode === '专注' ? 'active' : ''}}" bindtap="setMode" data-mode="专注">专注</view>
+    <view class="mode-btn {{currentMode === '短休息' ? 'active' : ''}}" bindtap="setMode" data-mode="短休息">短休息</view>
+    <view class="mode-btn {{currentMode === '长休息' ? 'active' : ''}}" bindtap="setMode" data-mode="长休息">长休息</view>
+  </view>
+  
+  <custom-tab-bar active="{{0}}" theme="{{currentModeTheme}}"></custom-tab-bar>
+</view> 

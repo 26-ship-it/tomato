@@ -1,0 +1,26 @@
+<view class="tab-bar {{theme ? 'theme-' + theme : ''}}">
+  <view class="tab-item {{active === 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">
+    <view class="tab-icon {{active === 0 ? 'active' : ''}}">
+      <text class="iconfont icon-clock"></text>
+    </view>
+    <view class="tab-text {{active === 0 ? 'active' : ''}}">计时器</view>
+  </view>
+  <view class="tab-item {{active === 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">
+    <view class="tab-icon {{active === 1 ? 'active' : ''}}">
+      <text class="iconfont icon-stats"></text>
+    </view>
+    <view class="tab-text {{active === 1 ? 'active' : ''}}">统计</view>
+  </view>
+  <view class="tab-item {{active === 2 ? 'active' : ''}}" bindtap="switchTab" data-index="2">
+    <view class="tab-icon {{active === 2 ? 'active' : ''}}">
+      <text class="iconfont icon-settings"></text>
+    </view>
+    <view class="tab-text {{active === 2 ? 'active' : ''}}">设置</view>
+  </view>
+  <view class="tab-item {{active === 3 ? 'active' : ''}}" bindtap="switchTab" data-index="3">
+    <view class="tab-icon {{active === 3 ? 'active' : ''}}">
+      <text class="iconfont icon-ai"></text>
+    </view>
+    <view class="tab-text {{active === 3 ? 'active' : ''}}">AI对话</view>
+  </view>
+</view> 

@@ -1,0 +1,23 @@
+<view class="container">
+  <scroll-view class="message-list" scroll-y="true" scroll-top="{{scrollTop}}">
+    <block wx:for="{{messages}}" wx:key="index">
+      <!-- 系统消息 (时间戳) -->
+      <view wx:if="{{item.from === 'system'}}" class="timestamp">
+        <text>{{item.text}}</text>
+      </view>
+
+      <!-- 用户/AI 消息行 -->
+      <view wx:else class="message-row {{item.from}}">
+        <image class="avatar" src="{{item.avatar}}"></image>
+        <view class="message-bubble">
+          <text class="message-text">{{item.text}}</text>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <view class="input-container">
+    <input class="input-field" value="{{inputValue}}" bindinput="onInput" placeholder="输入消息..."/>
+    <button class="send-button" bindtap="sendMessage">发送</button>
+  </view>
+</view> 

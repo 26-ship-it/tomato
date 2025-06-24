@@ -1,0 +1,86 @@
+<view class="container">
+  <view class="settings-list">
+    <view class="settings-item">
+      <view class="settings-item-left">
+        <view class="settings-icon work-icon">
+          <image src="/方框.png" class="settings-icon-img"/>
+        </view>
+        <view class="settings-item-text">专注时长</view>
+      </view>
+      <view class="settings-item-right">
+        <input type="number" class="time-input" value="{{workTime}}" bindblur="handleTimeInput" data-type="workTime" />
+        <text class="input-unit">分钟</text>
+      </view>
+    </view>
+    
+    <view class="settings-item">
+      <view class="settings-item-left">
+        <view class="settings-icon break-icon">
+          <image src="/方框.png" class="settings-icon-img"/>
+        </view>
+        <view class="settings-item-text">短休息时长</view>
+      </view>
+      <view class="settings-item-right">
+        <input type="number" class="time-input" value="{{shortBreakTime}}" bindblur="handleTimeInput" data-type="shortBreakTime" />
+        <text class="input-unit">分钟</text>
+      </view>
+    </view>
+
+    <view class="settings-item">
+      <view class="settings-item-left">
+        <view class="settings-icon break-icon">
+          <image src="/方框.png" class="settings-icon-img"/>
+        </view>
+        <view class="settings-item-text">长休息时长</view>
+      </view>
+      <view class="settings-item-right">
+        <input type="number" class="time-input" value="{{longBreakTime}}" bindblur="handleTimeInput" data-type="longBreakTime" />
+        <text class="input-unit">分钟</text>
+      </view>
+    </view>
+    
+    <view class="settings-item" bindtap="navigateToSetting" data-type="sound">
+      <view class="settings-item-left">
+        <view class="settings-icon sound-icon">
+          <image src="/方框.png" class="settings-icon-img"/>
+        </view>
+        <view class="settings-item-text">提示音效</view>
+      </view>
+      <view class="settings-item-right">
+        <text>{{sound}}</text>
+        <image src="/方框.png" class="settings-icon-img arrow-icon"/>
+      </view>
+    </view>
+    
+    <view class="settings-item" bindtap="navigateToSetting" data-type="theme">
+      <view class="settings-item-left">
+        <view class="settings-icon theme-icon">
+          <image src="/方框.png" class="settings-icon-img"/>
+        </view>
+        <view class="settings-item-text">主题颜色</view>
+      </view>
+      <view class="settings-item-right">
+        <text>{{theme}}</text>
+        <image src="/方框.png" class="settings-icon-img arrow-icon"/>
+      </view>
+    </view>
+  </view>
+  
+  <view class="settings-section-title">数据管理</view>
+  <view class="settings-list">
+    <view class="settings-item warning" bindtap="clearAllData">
+      <view class="settings-item-left">
+        <view class="settings-icon delete-icon">
+          <image src="/方框.png" class="settings-icon-img"/>
+        </view>
+        <view class="settings-item-text">清除所有番茄钟记录</view>
+      </view>
+      <view class="settings-item-right">
+        <image src="/方框.png" class="settings-icon-img arrow-icon"/>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 添加自定义导航栏 -->
+  <custom-tab-bar active="{{2}}" theme="longBreak"></custom-tab-bar>
+</view> 
